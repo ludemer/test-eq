@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deploy
+  namespace: test
+  labels:
+    app: test
+    tier: backend
+    environment: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test
+      tier: backend
+      environment: test
+  template:
+    metadata:
+      labels:
+        app: test
+        tier: backend
+        environment: test
+    spec:
+      containers:
+        - name: test
+          image:  us-central1-docker.pkg.dev/test-eq-393918/my-test/test:v1.0
+          env:
+            - name: PORT
+              value: 8081
+            - name: POSTGRES_PORT
+              valueFrom:
+                secretKeyRef:
+                  key: POSTGRES_PORT
+                  name: secret-sql-proxy
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  key: POSTGRES_USER
+                  name: secret-sql-proxy
+            - name: POSTGRES_PASS
+              valueFrom:
+                secretKeyRef:
+                  key: POSTGRES_PASS
+                  name: secret-sql-proxy
+            - name: POSTGRES_HOST
+              valueFrom:
+                secretKeyRef:
+                  key: POSTGRES_HOST
+                  name: secret-sql-proxy
+            - name: POSTGRES_DB
+              valueFrom:
+                secretKeyRef:
+                  key: POSTGRES_DB
+                  name: secret-sql-proxy
+            - name: POSTGRES_SCHEMA
+              valueFrom:
+                secretKeyRef:
+                  key: POSTGRES_SCHEMA
+                  name: secret-sql-proxy
+          imagePullPolicy: Always
+          volumeMounts:
+             - mountPath: /secrets/
+               name: proxy-service-account
+               readOnly: true
+          ports:
+           - containerPort: 8081
+        - command:
+          - /cloud_sql_proxy
+          - -ip_address_types=PRIVATE
+          - -instances= test-eq-393918:us-central1:postgresql-test:5432  #cadena sql
+          - -credential_file=/secrets/sa.json   #json  credenciales para poder llegar a sql
+          image: gcr.io/cloudsql-docker/gce-proxy:1.22.0
+          name: secret-sa-proxy
+          securityContext:
+            runAsNonRoot: true
+          volumeMounts:
+          - mountPath: /secrets/
+            name: proxy-service-account
+            readOnly: true
+      volumes:
+      - name: proxy-service-account
+        secret:
+          teste: 420
+          secretName: secret-sa-proxy

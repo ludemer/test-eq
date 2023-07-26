@@ -1,0 +1,39 @@
+---
+- hosts: k8s
+  tasks:
+  - name: "Crear namespace"
+     k8s:
+      name: test
+      api_version: v1
+      kind: Namespace
+      state: present
+   - name: Crear  Deployment 
+     k8s:
+       state: present
+       namespace: test
+       src: deployment.yml
+   - name: Crear  service 
+     k8s:
+       state: present
+       namespace: test
+       src: svc.yml 
+   - name: Crear backend
+     k8s:
+       state: present
+       namespace: test
+       src: back.yml
+   - name: Crear  ingress google
+     k8s:
+       state: present
+       namespace: test
+       src: ing.yml
+   - name: Crear  secret bd
+     k8s:
+       state: present
+       namespace: test
+       src: secrt_bd.yml   
+   - name: Crear  secret sa
+     k8s:
+       state: present
+       namespace: test
+       src: secret_sa.yml           

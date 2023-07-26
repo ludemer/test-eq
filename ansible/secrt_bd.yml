@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-sql-proxy
+  namespace: test
+type: Opaque
+data:
+  POSTGRES_DB: dGVzdA==
+  POSTGRES_HOST: IDM1LjE5Mi45My45NA==
+  POSTGRES_PASS: dGVzdDEyMzQ=
+  POSTGRES_PORT: NTQzMg==
+  POSTGRES_SCHEMA: cHVibGlj
+  POSTGRES_USER: dGVzdA==

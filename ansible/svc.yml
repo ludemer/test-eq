@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-svc
+  namespace: test
+  annotations:
+    cloud.google.com/neg: '{"ingress": true}'
+    cloud.google.com/backend-config: '{"ports": {"http":"test-bck-api"} }'
+    app: test
+    tier: backend
+    environment: test
+spec:
+  ports:
+  - name: http
+    port: 8081
+    protocol: TCP
+    targetPort: 8081
+  selector:
+    app: test
+  type: NodePort #

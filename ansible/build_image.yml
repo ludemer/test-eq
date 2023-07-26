@@ -1,0 +1,31 @@
+---
+- hosts: localhost
+  tasks:
+    - name: create build directory
+      file:
+        path: /ansible/test-Dockerfile
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+    - name: copy Dockerfile  node 
+      copy:
+        src: ../node/Dockerfile
+        dest: /ansible/test-Dockerfile
+        owner: root
+        group: root
+        mode: '0644'
+    - name: build container image
+      docker_image:
+        name: test:v1.0
+        build:
+          path: /ansible/test-Dockerfile
+          source: build
+        state: present
+
+- name: Tag and push to docker hub
+  community.docker.docker_image:
+    name: test/test:latest
+    repository: southamerica-west1-docker.pkg.dev/test-project/test/
+    push: true
+    source: local
