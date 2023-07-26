@@ -1,13 +1,1 @@
-{
-  "type": "service_account",
-  "project_id": "test-eq-393918",
-  "private_key_id": "54140236594bf8508ca8a3753488ade1d082b9c8",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDZ2V6GIDaEktMj\na/QvlobgdcC1JmdOq0BhTVbKiyCij5ghhJWpQpXeYp4ukn0Q+DetqzmuVfP338V1\nlsuqsflVCNYA1FVzAixvtTqMirYtIKGNxaTf2diWS67zN3102bKNLiyvZGvwaREj\nljSywmFvqEVp0qawzxyIhX/uJTbGb4KDDBtPuMbEu1ALDIBS+3GSHk0fMXr7fJ1G\nytTzwis0iOsUJiATfOtqJGK+xO8mXQU3TojKwnWMAE5KRfHBGKqZuhCkJuc/DbZt\nYlmgDmu1XO4cN3LdM4m3vXGMKp7mvBQdUbHrXJmIfDpifq+HVGqn7WQTGLsr6DWJ\nwxEVJx6hAgMBAAECggEABCRwJIXCnkplGGR/m/4KlNm4Wdl1Qmza3bQeRTNYYgRF\nT3HZdK1O8zprKUCLf0HxBmzd57+Q/Yge6umnTW4dQG2EFYz0DlVJagWyAM/MagGX\nq330G3Y6z5TN1VMbSsMESaSfSzsncEasgZbkFqK/6ThzusY7eYYz/oaR/wHBz7Zw\ncYDoGiAO3c+anXishJ/aLbcSVjQYU8ImEZNV9pFB1g8Dj8JGCNfY43wqQB7vmkRc\nnA00c90J4RFYeaMNuHZm6kXh5steUSaVc3cptd3ztHhdvL9+eV5GNXqpHPmoY51S\n8YpXTuzGx4vME/XCrq2eQiqA9/8UIITLlLGaVWdyjwKBgQD2Y2oX4cgO+ffgj4a/\nnkLFNAlaKzQhGqI7fg2HdIn92Dm4SZLWe8G5pxeqWkBYHUxviXhkhGKCngVlS0PX\nZ8GNS0wwEWHD24vhxYcLEaqjFTbLj+ybEq4sRS/uQwkz1VChJshgU6sm7WTPVJ8V\n5c7BneLsmdEN7Bd/RjKKEivSVwKBgQDiWPHEWxxOF0rLdyYpWHEEypDhkmynUkFf\nRd2vKiBMc9ylgI08SMSHL9BYDkR78gea+DS9yRk7L1RDbFNG7Io5I/JgwnFeTxZV\n7fQPLMb1FTq88H6iVtAXaYpplDpfIaOfS5gszNkNve4rdHwTBLeghiKcfD++ClEV\n00snqA4rxwKBgQC05q0gt79hb5rVn8u5qQMxM1GiiJIPtDRlJdndGG2wmS9X5X0Q\nSXElVE+F3hncGDbktbRVaPXDHS6s/qPi5eUwTpazvC9h1DJSI+tQ7zmv34WJ1DRO\nb1q+WlYkw8df7UDz8Tuxrfy96hLYPzNGqqIxejEAsrbRWASwh+PXiBvwpQKBgEhy\nD2+5eaXE7ruQtzYkiIfwDc8k/oHPYf0Mb5fQ8+WEb+rI6muRHtXmB9knN+Qz4xtG\nthrIcrruuxmZYk4hB1yilMFDeuWkipGWR7dTrZpj4Rj4II/1GUVlElgYiVZJfgVO\nPLaaGh67268s6UltCRjn1cwgOIaq5qkFp9hZga+hAoGBAMjODIm3HsYyrBg5qelW\nhc05jlkP68afvDxBkb9ohZfkbaF0CmMUYlaIReK61lBImSw3er77L1IxT4HHrmCh\n0gS8pSZJ//jwBNwEmn906pinkUkkuc3oz6ZqAISQAjLMW0XYymSGPrOmeDe2Thyo\nPAZaxG1TWBZhw3o5IzYYKBm8\n-----END PRIVATE KEY-----\n",
-  "client_email": "sa-access-resosurce@test-eq-393918.iam.gserviceaccount.com",
-  "client_id": "115175971803917531047",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sa-access-resosurce%40test-eq-393918.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
-}
+json que se genera de la cuenta de servicio para dar los permisos necesarios para deployar la infra
